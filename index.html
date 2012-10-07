@@ -21,6 +21,17 @@
                     name: 'reveal',
                     selector: '.revealme'
                 });
+                
+                $('#test').swipe(function(evt, data) {
+                    if (info.direction === 'left') {
+                        jQT.goTo($('#page2'), 'dissolve');
+                    }
+                });
+                $('#page2').swipe(function(evt, data){
+                    if (info.direction === 'right') {
+                        jQT.goBack('#page1', 'dissolve');
+                    }
+                });
             });
         </script>
         <style type="text/css" media="screen">
